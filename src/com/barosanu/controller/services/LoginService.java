@@ -11,8 +11,10 @@ import javax.mail.Store;
 import com.barosanu.EmailManager;
 import com.barosanu.controller.EmailLoginResult;
 import com.barosanu.model.EmailAccount;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 
-public class LoginService {
+public class LoginService extends Service<EmailLoginResult> {
 
     EmailAccount emailAccount;
     EmailManager emailManager;
@@ -22,7 +24,7 @@ public class LoginService {
         this.emailManager = emailManager;
     }
 
-    public EmailLoginResult login(){
+    private EmailLoginResult login(){
         Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -31,6 +33,7 @@ public class LoginService {
         };
 
         try {
+            Thread.sleep(16000);
             Session session = Session.getInstance(emailAccount.getProperties(), authenticator);
             Store store = session.getStore("imaps");
             store.connect(emailAccount.getProperties().getProperty("incomingHost"),
@@ -51,5 +54,15 @@ public class LoginService {
             return  EmailLoginResult.FAILED_BY_UNEXPECTED_ERROR;
         }
         return EmailLoginResult.SUCCESS;
+    }
+
+    @Override
+    protected Task<EmailLoginResult> createTask() {
+        return new Task<EmailLoginResult>() {
+            @Override
+            protected EmailLoginResult call() throws Exception {
+                return login();
+            }
+        };
     }
 }
