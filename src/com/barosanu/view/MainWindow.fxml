@@ -11,6 +11,7 @@
 
 <AnchorPane prefHeight="701.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barosanu.controller.MainWindowController">
    <children>
+       <!-- AnchorPane.xxxAnchor: anchors the element to the pane (makes it responsive to windows size) -->
       <MenuBar prefHeight="29.0" prefWidth="1060.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -31,6 +32,7 @@
           </Menu>
         </menus>
       </MenuBar>
+       <!-- Every children should anchor borders according to siblings -->
       <TreeView fx:id="emailsTreeView" layoutY="27.0" prefHeight="674.0" prefWidth="246.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="27.0" />
       <TableView fx:id="emailsTableView" layoutX="246.0" layoutY="28.0" prefHeight="233.0" prefWidth="816.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
         <columns>
