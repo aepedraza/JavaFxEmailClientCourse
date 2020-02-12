@@ -3,6 +3,9 @@ package com.barosanu.controller;
 import com.barosanu.EmailManager;
 import com.barosanu.view.ViewFactory;
 
+/**
+ * Common properties and logic for all controllers
+ */
 public abstract class BaseController {
 
     private EmailManager emailManager;
