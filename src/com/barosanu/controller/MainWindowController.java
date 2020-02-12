@@ -2,6 +2,7 @@ package com.barosanu.controller;
 
 import com.barosanu.EmailManager;
 import com.barosanu.view.ViewFactory;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeView;
