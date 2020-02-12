@@ -11,7 +11,7 @@ public class LoginWindowController {
     private Button errorLabel;
 
     @FXML
-    private TextField emailAddressFied;
+    private TextField emailAddressField;
 
     @FXML
     private PasswordField passwordField;
