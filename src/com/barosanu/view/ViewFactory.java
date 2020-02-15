@@ -14,8 +14,6 @@ import java.io.IOException;
 
 /**
  * Factory for invoking views.
- * <p>
- * This is the first skeleton, will be fully implemented in next lectures
  */
 public class ViewFactory {
 
