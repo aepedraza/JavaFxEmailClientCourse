@@ -28,6 +28,8 @@ public class LoginWindowController extends BaseController {
     void loginButtonAction() {
         System.out.println("loginButtonAction!!");
         viewFactory.showMainWindow();
+
+        // workaround for closing the stage: pick any element and get the parent scene
         Stage stage = (Stage) errorLabel.getScene().getWindow();
         viewFactory.closeStage(stage);
     }
