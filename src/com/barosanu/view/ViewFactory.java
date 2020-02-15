@@ -26,11 +26,12 @@ public class ViewFactory {
     public void showLoginWindow() {
         System.out.println("show login window called");
 
+        // This routine helps to communicate between controllers dynamically
         BaseController controller = new LoginWindowController(emailManager, this, "LoginWindow.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFxmlName()));
         fxmlLoader.setController(controller);
         Parent parent;
-        try {
+        try { // because FXML file loading can fail
             parent = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
