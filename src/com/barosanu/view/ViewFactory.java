@@ -19,6 +19,8 @@ import java.util.ArrayList;
 public class ViewFactory {
 
     private EmailManager emailManager;
+
+    // We need to maintain this list for applying CSS to all active stages
     private ArrayList<Stage> activeStages;
 
     public ViewFactory(EmailManager emailManager) {
