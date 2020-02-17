@@ -94,8 +94,8 @@ public class ViewFactory {
         for (Stage stage: activeStages) {
             Scene scene = stage.getScene();
             scene.getStylesheets().clear();
-            scene.getStylesheets().add(getClass().getResource(ColorTheme.getCssPath(colorTheme)).toExternalForm());
-            scene.getStylesheets().add(getClass().getResource(FontSize.getCssPath(fontSize)).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(colorTheme.getCssPath()).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(fontSize.getCssPath()).toExternalForm());
         }
     }
 }

@@ -1,21 +1,18 @@
 package com.barosanu.view;
 
 public enum ColorTheme {
-    LIGHT,
-    DEFAULT,
-    DARK;
+    LIGHT("themeLight"),
+    DEFAULT("themeDefault"),
+    DARK("themeDark");
 
-    public static String getCssPath(ColorTheme colorTheme){
-        switch (colorTheme) {
-            case LIGHT:
-                return "css/themeLight.css";
-            case DEFAULT:
-                return "css/themeDefault.css";
-            case DARK:
-                return "css/themeDark.css";
-            default:
-                return null;
-        }
+    private String css;
+
+    ColorTheme(String css) {
+        this.css = css;
+    }
+
+    public String getCssPath() {
+        return "css/" + css + ".css";
     }
 
 }
