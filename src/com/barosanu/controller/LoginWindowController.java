@@ -29,7 +29,7 @@ public class LoginWindowController extends BaseController {
     @FXML
     void loginButtonAction() {
         if(fieldsAreValid()){
-            EmailAccount emailAccount = new EmailAccount(emailAddressFied.getText(), passwordField.getText());
+            EmailAccount emailAccount = new EmailAccount(emailAddressField.getText(), passwordField.getText());
             LoginService loginService = new LoginService(emailAccount, emailManager);
             EmailLoginResult emailLoginResult= loginService.login();
 
@@ -48,7 +48,7 @@ public class LoginWindowController extends BaseController {
     }
 
     private boolean fieldsAreValid() {
-        if(emailAddressFied.getText().isEmpty()) {
+        if(emailAddressField.getText().isEmpty()) {
             errorLabel.setText("Please fill email");
             return false;
         }

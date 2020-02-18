@@ -1,10 +1,16 @@
 package com.barosanu.controller.services;
 
+import javax.mail.AuthenticationFailedException;
+import javax.mail.Authenticator;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Store;
+
 import com.barosanu.EmailManager;
 import com.barosanu.controller.EmailLoginResult;
 import com.barosanu.model.EmailAccount;
-
-import javax.mail.*;
 
 public class LoginService {
 
