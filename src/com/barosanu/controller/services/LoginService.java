@@ -14,10 +14,13 @@ import com.barosanu.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
+/**
+ * {@code extends Service<>} provides multithreading abilities to the service, thus not blocking the UI
+ */
 public class LoginService extends Service<EmailLoginResult> {
 
-    EmailAccount emailAccount;
-    EmailManager emailManager;
+    private EmailAccount emailAccount;
+    private EmailManager emailManager;
 
     public LoginService(EmailAccount emailAccount, EmailManager emailManager) {
         this.emailAccount = emailAccount;
@@ -58,7 +61,7 @@ public class LoginService extends Service<EmailLoginResult> {
 
     @Override
     protected Task<EmailLoginResult> createTask() {
-        return new Task<EmailLoginResult>() {
+        return new Task<>() {
             @Override
             protected EmailLoginResult call() throws Exception {
                 return login();

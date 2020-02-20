@@ -32,6 +32,8 @@ public class LoginWindowController extends BaseController {
         if(fieldsAreValid()){
             EmailAccount emailAccount = new EmailAccount(emailAddressField.getText(), passwordField.getText());
             LoginService loginService = new LoginService(emailAccount, emailManager);
+
+            // call async service and add listener
             loginService.start();
             loginService.setOnSucceeded(event -> {
                 EmailLoginResult emailLoginResult= loginService.getValue();
