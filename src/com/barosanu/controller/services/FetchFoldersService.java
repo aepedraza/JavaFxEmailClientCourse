@@ -11,9 +11,9 @@ import javax.mail.Store;
 public class FetchFoldersService extends Service<Void> {
 
     private Store store;
-    private EmailTreeItem<String> foldersRoot;
+    private EmailTreeItem foldersRoot;
 
-    public FetchFoldersService(Store store, EmailTreeItem<String> foldersRoot) {
+    public FetchFoldersService(Store store, EmailTreeItem foldersRoot) {
         this.store = store;
         this.foldersRoot = foldersRoot;
     }
@@ -34,9 +34,9 @@ public class FetchFoldersService extends Service<Void> {
         handleFolders(folders, foldersRoot);
     }
 
-    private void handleFolders(Folder[] folders, EmailTreeItem<String> foldersRoot) {
+    private void handleFolders(Folder[] folders, EmailTreeItem foldersRoot) {
         for(Folder folder: folders){
-            EmailTreeItem<String> emailTreeItem = new EmailTreeItem<String>(folder.getName());
+            EmailTreeItem emailTreeItem = new EmailTreeItem(folder.getName());
             foldersRoot.getChildren().add((emailTreeItem));
         }
 

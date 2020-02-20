@@ -8,14 +8,14 @@ import javafx.scene.control.TreeItem;
 public class EmailManager {
 
     //Folder handling:
-    private EmailTreeItem<String> foldersRoot = new EmailTreeItem<String>("");
+    private EmailTreeItem foldersRoot = new EmailTreeItem("");
 
-    public EmailTreeItem<String> getFoldersRoot(){
+    public EmailTreeItem getFoldersRoot(){
         return foldersRoot;
     }
 
     public void addEmailAccount(EmailAccount emailAccount){
-        EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
+        EmailTreeItem treeItem = new EmailTreeItem(emailAccount.getAddress());
         FetchFoldersService fetchFoldersService = new FetchFoldersService(emailAccount.getStore(), treeItem);
         fetchFoldersService.start();
         foldersRoot.getChildren().add(treeItem);

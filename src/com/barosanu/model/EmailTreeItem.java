@@ -2,7 +2,7 @@ package com.barosanu.model;
 
 import javafx.scene.control.TreeItem;
 
-public class EmailTreeItem<String> extends TreeItem<String> {
+public class EmailTreeItem extends TreeItem<String> {
 
     private String name;
 
