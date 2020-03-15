@@ -48,7 +48,7 @@ public class FetchFoldersService extends Service<Void> {
 
     }
 
-    private void fetchMessagesOnFolder(Folder folder, EmailTreeItem<String> emailTreeItem) {
+    private void fetchMessagesOnFolder(Folder folder, EmailTreeItem emailTreeItem) {
        Service fetchMessagesService = new Service() {
            @Override
            protected Task createTask() {
